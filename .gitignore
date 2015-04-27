@@ -1,0 +1,52 @@
+# Created by https://www.gitignore.io
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+.idea
+*.log
+wordpress/.idea
+wordpress/sitemap.xml
+wordpress/sitemap.xml.gz
+wordpress/wp-config.php
+wordpress/error_log
+wordpress/wp-content/advanced-cache.php
+wordpress/wp-content/backup-db/
+wordpress/wp-content/backups/
+wordpress/wp-content/blogs.dir/
+wordpress/wp-content/cache/
+wordpress/wp-content/upgrade/
+wordpress/wp-content/uploads/
+wordpress/wp-content/wp-cache-config.php
+wordpress/wp-content/plugins/all-in-one-wp-migration/backups/
+wordpress/wp-content/plugins/all-in-one-wp-migration/storage/status.php
+
+static/node_modules
+static/builds
+static/.idea
+
+mysqldump
+.my.cnf
+exports/temp.sql
+wp-admin-password.txt
+admin-password.txt
