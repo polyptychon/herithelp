@@ -37,7 +37,7 @@ html { font-size: 16px; line-height: 1.625em; }
 
 * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-body { background: white; font-family: "Open Sans",​Helvetica,​Arial,​sans-serif; font-weight: 400; color: #555555; position: relative; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { background: #ededed; font-family: "Open Sans",​Helvetica,​Arial,​sans-serif; font-weight: 400; color: #555555; position: relative; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 @media only screen and (max-width: 767px) { body { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; width: 100%; min-width: 0; } }
 
 html, body { height: 100%; }
@@ -1241,7 +1241,7 @@ img { -ms-interpolation-mode: bicubic; }
   .navbar a.toggle:active, .navbar a.toggle.active { background: #3e4043; } }
 
 .navbar .logo { display: inline-block; padding: 0; height: 60px; line-height: 58px; margin:10px;margin-left:0;}
-.navbar .logo a { display: block; padding: 0; overflow: hidden; height: 60px; line-height: 58px; color:#ededed;}
+.navbar .logo a { display: block; padding: 0; overflow: hidden; height: 62px; line-height: 58px; color:#ededed;}
 .navbar .logo a:hover, .navbar .logo a:focus {color:#b6b6b6;}
 .navbar .logo a img { max-height: 95%; }
 @media only screen and (max-width: 767px) { .navbar .logo { float: left; display: inline; }
@@ -1251,9 +1251,9 @@ img { -ms-interpolation-mode: bicubic; }
 .navbar ul { display: table; display: initial; vertical-align: middle; margin: 0; float: none; }
 @media only screen and (max-width: 767px) { .navbar ul { position: absolute; display: block; width: 100% !important; height: 0; max-height: 0; top: 60px; left: 0; overflow: hidden; text-align: center; background: #3e4043; }
   .navbar ul.active { height: auto; max-height: 600px; z-index: 999998; -webkit-transition-duration: 0.5s; -moz-transition-duration: 0.5s; -o-transition-duration: 0.5s; transition-duration: 0.5s; -webkit-box-shadow: 0 2px 2px #252728; -moz-box-shadow: 0 2px 2px #252728; box-shadow: 0 2px 2px #252728; } }
-.navbar ul li { display: table-cell; float:left; text-align: center; padding-bottom: 0; margin: 0; height: 40px; line-height: 38px; }
+.navbar ul li { display: list-item; float:left; text-align: center; padding-bottom: 0; margin: 0; height: 40px; line-height: 38px; }
 @media only screen and (max-width: 767px) { .navbar ul li { display: block; position: relative; min-height: 50px; max-height: 320px; height: auto; width: 100%; border-right: 0 !important; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; -webkit-transition-duration: 0.5s; -moz-transition-duration: 0.5s; -o-transition-duration: 0.5s; transition-duration: 0.5s; } }
-.navbar ul li > a { display: block; padding: 0 16px; white-space: nowrap; color: white; text-shadow: 0 1px 2px #191a1b, 0 1px 0 #191a1b; height: 40px; line-height: 38px; font-size: 16px; font-size: 1rem; }
+.navbar ul li > a { display: block; padding: 0 16px; white-space: nowrap; color: white; /*text-shadow: 0 1px 2px #191a1b, 0 1px 0 #191a1b;*/ height: 40px; line-height: 38px; font-size: 16px; font-size: 1rem; }
 .navbar ul li > a i.icon-popup { position: absolute; }
 .navbar ul li .btn { border-color: #000101 !important; }
 .navbar ul li.field { margin-bottom: 0 !important; margin-right: 0; }
@@ -1792,3 +1792,24 @@ h3.post_teaser_heading {
 .sticky{}
 .gallery-caption{}
 .bypostauthor{}
+
+.nav-brand {
+  background: url(images/logo.png) no-repeat;
+  width:300px;
+  height: 62px;
+}
+.navbar h2.logo > .nav-brand  {
+  position: absolute;
+  z-index: 10000;
+}
+.navbar h2.logo .nav-brand {
+  text-indent: -10000px;
+}
+
+body {
+  font-family: "Open Sans",​Helvetica,​Arial,​sans-serif;
+}
+
+p img {
+  border: 1px solid #b3b3b3;
+}
