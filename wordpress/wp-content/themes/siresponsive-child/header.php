@@ -13,6 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=greek-ext,greek' rel='stylesheet' type='text/css'>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
@@ -26,7 +27,7 @@
 			<div class="row">
 				<!--<h2 class="twelve columns logo"><a href="<?php //echo esc_url( home_url() ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a></h2>-->
         <div class="twelve columns">
-          <h2 class="seven columns logo"><a href="<?php echo esc_url( home_url() ); ?>" rel="home">Herit App Support Center</a></h2>
+          <h2 class="seven columns logo"><a href="<?php echo esc_url( home_url() ); ?>" rel="home" class="nav-brand">Herit App Support Center</a></h2>
           <?php if ( !function_exists('dynamic_sidebar') ||
             !dynamic_sidebar('Header Widgets Area') ) :
           endif; ?>
