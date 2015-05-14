@@ -1803,5 +1803,5 @@ h3.post_teaser_heading {
 .bypostauthor{}
 
 .twelve.columns h1 {
-  margin-bottom:20px;
+  margin-bottom:20px !important;
 }
