@@ -1801,3 +1801,7 @@ h3.post_teaser_heading {
 .sticky{}
 .gallery-caption{}
 .bypostauthor{}
+
+h1 {
+  margin-top:20px;
+}
