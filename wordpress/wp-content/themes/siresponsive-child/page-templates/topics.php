@@ -36,8 +36,6 @@ Template Name: Topics
         <?php endforeach; ?>
       </ul>
 
-      <?php the_content(); ?>
-
 
     </div>
   </div>
