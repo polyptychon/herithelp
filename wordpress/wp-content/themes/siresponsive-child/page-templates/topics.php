@@ -18,7 +18,6 @@ Template Name: Topics
   <div class="row page" style="margin-bottom: 20px;">
     <div class="twelve columns">
       <?php the_title( '<h1 class="twelve columns page_heading">', '</h1>' ); ?>
-      <?php the_content(); ?>
       <ul class="sidebar-menu" style="text-align: center;">
         <?php
         $parentID = ICL_LANGUAGE_CODE == get_the_ID();
@@ -35,18 +34,14 @@ Template Name: Topics
           </li>
         <?php endforeach; ?>
       </ul>
-
-
-      <?php while ( have_posts() ) : the_post(); ?>
-
-        <?php the_content(); ?>
-
-      <?php endwhile; // end of the loop. ?>
-
     </div>
   </div>
 
-
+<div class="row page" style="margin-bottom: 20px;">
+  <div class="twelve columns">
+    <?php the_content(); ?>
+  </div>
+</div>
 
 
 <?php endwhile; // end of the loop. ?>
