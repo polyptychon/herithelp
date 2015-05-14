@@ -35,7 +35,13 @@ Template Name: Topics
           </li>
         <?php endforeach; ?>
       </ul>
-      <?php get_template_part( 'content', 'page' ); ?>
+
+
+      <?php while ( have_posts() ) : the_post(); ?>
+
+        <?php get_template_part( 'content', 'page' ); ?>
+
+      <?php endwhile; // end of the loop. ?>
 
     </div>
   </div>
