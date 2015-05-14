@@ -10,7 +10,7 @@
 		<div class="twelve columns">
 		<?php the_title( '<h1 class="twelve columns page_heading">', '</h1>' ); ?>
 		<div class="post_meta">
-			<span class="edit"><?php edit_post_link( __( 'Edit', 'slresponsive' ), '<span class="edit-link">', '</span>' ); ?></span>
+			<!--<span class="edit"><?php //edit_post_link( __( 'Edit', 'slresponsive' ), '<span class="edit-link">', '</span>' ); ?></span>-->
 		</div>
 		<?php the_content(); ?>
 	</div>
