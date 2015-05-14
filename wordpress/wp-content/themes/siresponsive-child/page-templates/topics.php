@@ -10,10 +10,10 @@ Template Name: Topics
 
 
 
-<div class="row page" style="margin-bottom: 20px; margin-top:20px;">
+<div class="row page" style="margin-bottom: 20px;">
   <div class="twelve columns">
     <?php the_title( '<h1 class="twelve columns page_heading">', '</h1>' ); ?>
-    <ul class="sidebar-menu" style="text-align: center;">
+    <ul class="sidebar-menu" style="text-align: center; margin-top:20px;">
       <?php
       $parentID = ICL_LANGUAGE_CODE == get_the_ID();
       $pages    = get_pages( array(
