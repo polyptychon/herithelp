@@ -10,7 +10,7 @@ Template Name: Topics
 
 
 
-<div class="row page" style="margin-bottom: 20px;">
+<div class="row page" style="margin-bottom: 20px; margin-top:20px;">
   <div class="twelve columns">
     <?php the_title( '<h1 class="twelve columns page_heading">', '</h1>' ); ?>
     <ul class="sidebar-menu" style="text-align: center;">
