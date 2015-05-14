@@ -1813,3 +1813,6 @@ body {
 p img {
   border: 1px solid #b3b3b3;
 }
+.twelve.columns.page_heading {
+  margin-bottom:20px !important;
+}
