@@ -35,7 +35,7 @@ Template Name: Topics
           </li>
         <?php endforeach; ?>
       </ul>
-
+      <?php get_template_part( 'content', 'page' ); ?>
 
     </div>
   </div>
