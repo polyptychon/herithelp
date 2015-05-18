@@ -1816,6 +1816,14 @@ p img {
 .twelve.columns.page_heading {
   margin-bottom:20px !important;
 }
-.footer .row {
+
+.footer {
+  padding:0;
+}
+
+.footer .row .twelve.columns {
   margin-top:50px;
+}
+.footer .row .twelve.columns p{
+  margin-bottom: 0;
 }
