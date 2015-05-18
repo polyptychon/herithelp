@@ -1816,3 +1816,6 @@ p img {
 .twelve.columns.page_heading {
   margin-bottom:20px !important;
 }
+.footer .row {
+  margin-bottom:50px;
+}
