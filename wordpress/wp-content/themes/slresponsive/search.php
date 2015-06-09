@@ -10,9 +10,11 @@ get_header(); ?>
 
 
 <?php if ( have_posts() ) : ?>
-<div class="row">
-		<h1 class="twelve columns page_heading"><?php printf( __( 'Search Results for: %s', 'slresponsive' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-</div>
+	<div class="row">
+	
+			<h1 class="twelve columns page_heading"><?php printf( __( 'Search Results for: %s', 'slresponsive' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+	
+	</div>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -28,7 +30,19 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php slresponsive_paging_nav(); ?>
+			<?php if ( function_exists( 'the_posts_navigation' ) ) : ?>
+				
+				<div class="row paging">
+					
+					<div class="twelve columns">			
+						
+						<?php the_posts_navigation(); ?>
+					
+					</div>
+					
+				</div>
+				
+			<?php endif; ?>
 
 		<?php else : ?>
 

@@ -60,7 +60,7 @@ function slresponsive_setup() {
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link'
+		'aside', 'image', 'video', 'quote', 'link', 'gallery', 'chat', 'audio'
 	) );
 
 	add_theme_support( 'post-thumbnails' ); 
@@ -295,9 +295,13 @@ add_action( 'widgets_init', 'slresponsive_widgets_init' );
 function slresponsive_scripts() {
 	wp_enqueue_style( 'slresponsive-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/libs/modernizr-2.6.2.js', array(), '20120206', true );
+	
 	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/libs/modernizr-2.6.2.min.js', array(), '20120206', true );
 	
 	wp_enqueue_script( 'gumby', get_template_directory_uri() . '/js/libs/gumby.js', array(), '20120206', true );
+		
+	wp_enqueue_script( 'gumby', get_template_directory_uri() . '/js/libs/gumby.min.js', array(), '20120206', true );
 	
 	wp_enqueue_script( 'gumby-retina', get_template_directory_uri() . '/js/libs/ui/gumby.retina.js', array(), '20120206', true );
 	
@@ -327,6 +331,9 @@ function slresponsive_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'slresponsive_scripts' );
 
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/welcome-screen.php';
+}
 /**
  * Implement the Custom Header feature.
  */

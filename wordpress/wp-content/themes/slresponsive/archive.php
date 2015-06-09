@@ -85,35 +85,19 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php
-	function slresponsive_pagenavi() {
-	global $wp_query;
-
-	$big = 999999999;
-
-		$args = array(
-		'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) )
-		,'format' => ''
-		,'current' => max( 1, get_query_var('paged') )
-		,'total' => $wp_query->max_num_pages
-		,'type' => 'plain'
-		,'prev_text'    => __( 'PREV', 'slresponsive' )
-		,'next_text'    => __( 'NEXT', 'slresponsive' )
-	);
-
-	$result = paginate_links( $args );
-
-	// удаляем добавку к пагинации для первой страницы
-	$result = str_replace( '/page/1', '', $result );
-
-	echo $result;
-}
-?>
-	<div class="row">
-		<div class="twelve columns paging">
-			<?php slresponsive_pagenavi(); ?>
-		</div>
-	</div>
+			<?php if ( function_exists( 'the_posts_navigation' ) ) : ?>
+				
+				<div class="row paging">
+					
+					<div class="twelve columns">			
+						
+						<?php the_posts_navigation(); ?>
+					
+					</div>
+					
+				</div>
+				
+			<?php endif; ?>
 
 		<?php else : ?>
 

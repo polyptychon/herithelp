@@ -5,12 +5,20 @@
  * @package slresponsive
  */
 ?>
-	<div class="row page">
-		<div class="twelve columns">
+<div class="row content-page">
+	
+	<div class="twelve columns">
+		
 		<?php the_title( '<h1 class="twelve columns page_heading">', '</h1>' ); ?>
-		<div class="post_meta">
-			<span class="edit"><i class="icon-pencil"></i><?php edit_post_link( __( 'Edit', 'slresponsive' ), '<span class="edit-link">', '</span>' ); ?></span>
-		</div>
+		
 		<?php the_content(); ?>
+		
+		<div class="post_meta">
+		
+			<?php edit_post_link( __( 'Edit', 'slresponsive' ), '<span class="edit"><i class="icon-pencil"></i><span class="edit-link">', '</span>' ); ?></span>
+		
+		</div>
+		
 	</div>
+	
 </div>

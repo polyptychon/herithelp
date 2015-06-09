@@ -12,8 +12,8 @@
  */
 
 get_header(); ?>
-	<div class="row">
-		<h1 class="twelve columns page_heading"><?php bloginfo( 'description' ); ?></h1> 
+	<div class="row page_heading">
+		<h1 class="twelve columns"><?php bloginfo( 'description' ); ?></h1> 
 	</div>
 	
 	<?php if ( have_posts() ) : ?>
@@ -31,34 +31,22 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-<?php
-	function slresponsive_pagenavi() {
-	global $wp_query;
+			<?php if ( function_exists( 'the_posts_navigation' ) ) : ?>
+				
+				<div class="row paging">
+					
+					<div class="twelve columns">			
+						
+						<?php the_posts_navigation(); ?>
+					
+					</div>
+					
+				</div>
+				
+			<?php endif; ?>
+	
 
-	$big = 999999999;
 
-		$args = array(
-		'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) )
-		,'format' => ''
-		,'current' => max( 1, get_query_var('paged') )
-		,'total' => $wp_query->max_num_pages
-		,'type' => 'plain'
-		,'prev_text'    => __( 'PREV', 'slresponsive' )
-		,'next_text'    => __( 'NEXT', 'slresponsive' )
-	);
-
-	$result = paginate_links( $args );
-
-	$result = str_replace( '/page/1', '', $result );
-
-	echo $result;
-}
-?>
-	<div class="row">
-		<div class="twelve columns paging">
-			<?php slresponsive_pagenavi(); ?>
-		</div>
-	</div>
 
 		<?php else : ?>
 
