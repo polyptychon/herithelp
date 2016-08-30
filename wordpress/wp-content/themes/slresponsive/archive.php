@@ -2,106 +2,70 @@
 /**
  * The template for displaying archive pages.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package slresponsive
  */
+$theme_layout = get_theme_mod( 'slresponsive_theme_layout_option', '' );
 
 get_header(); ?>
+<?php 
+if	  ($theme_layout == '1-column')		{echo '<div id="primary" class="content-area twelve columns">';}
+elseif($theme_layout == '2-columns-rs') {echo '<div id="primary" class="content-area nine columns columns">';}
+elseif($theme_layout == '2-columns-ls') {echo '<div id="primary" class="content-area ten columns push_two columns">';}
+elseif($theme_layout == '3-columns')	{echo '<div id="primary" class="content-area seven columns push_two columns">';}
+else  									{echo '<div id="primary" class="content-area nine columns columns">';}
 
-		<?php if ( have_posts() ) : ?>
-	<div class="row">
-		<h1 class="twelve columns page_heading"><?php
-						if ( is_category() ) :
-							single_cat_title();
+?>
+		<main id="main" class="site-main row" role="main">
 
-						elseif ( is_tag() ) :
-							single_tag_title();
-
-						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'slresponsive' ), '<span class="vcard">' . get_the_author() . '</span>' );
-
-						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'slresponsive' ), '<span>' . get_the_date() . '</span>' );
-
-						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'slresponsive' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'slresponsive' ) ) . '</span>' );
-
-						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'slresponsive' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'slresponsive' ) ) . '</span>' );
-
-						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'slresponsive' );
-
-						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'slresponsive' );
-
-						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'slresponsive' );
-
-						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'slresponsive' );
-
-						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'slresponsive' );
-
-						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'slresponsive' );
-
-						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'slresponsive' );
-
-						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'slresponsive' );
-
-						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'slresponsive' );
-
-						else :
-							_e( 'Archives', 'slresponsive' );
-
-						endif;
-					?></h1> 
-	</div>
-					
 		<?php
-					// Show an optional term description.
-					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="row"><div class="twelve columns">%s</div></div>', $term_description );
-					endif;
-				?>
+		if ( have_posts() ) : ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-
+			<header class="page-header row">
 				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
+					the_archive_title( '<h1 class="page-title eight columns">', '</h1>' );
+					the_archive_description( '<div class="taxonomy-description eight columns">', '</div>' );
 				?>
+			</header><!-- .page-header -->
 
-			<?php endwhile; ?>
+			<?php
+			/* Start the Loop */
+			while ( have_posts() ) : the_post();
 
-			<?php if ( function_exists( 'the_posts_navigation' ) ) : ?>
-				
-				<div class="row paging">
-					
-					<div class="twelve columns">			
-						
-						<?php the_posts_navigation(); ?>
-					
-					</div>
-					
-				</div>
-				
-			<?php endif; ?>
+				/*
+				 * Include the Post-Format-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', get_post_format() );
 
-		<?php else : ?>
+			endwhile;
 
-			<?php get_template_part( 'content', 'none' ); ?>
+			the_posts_navigation();
 
-		<?php endif; ?>
-<?php get_footer(); ?>
+		else :
+
+			get_template_part( 'template-parts/content', 'none' );
+
+		endif; ?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+<?php
+if($theme_layout == '1-column'){
+}
+elseif($theme_layout == '2-columns-ls'){
+	get_sidebar('left');	
+}
+elseif($theme_layout == '2-columns-rs'){
+	get_sidebar();	
+}
+elseif ($theme_layout == '3-columns'){
+	get_sidebar('left');
+	get_sidebar();	
+}
+else{
+	get_sidebar();	
+}
+get_footer();
