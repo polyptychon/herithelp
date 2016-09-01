@@ -17,7 +17,22 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+<style>
+  h2 strong,h2, h3 strong, h3 {
+    font-family: "Open Sans",Arial,sans-serif!important;
+    font-weight: 300;
+    color: #444444;
+    text-rendering: optimizeLegibility;
+    padding-top: 0.273em;
+    line-height: 1.15538em;
+    padding-bottom: 0.273em;
+    font-size:30px;
+  }
+  h3 strong, h3 {
+    font-size:22px;
+  }
 
+</style>
 <?php wp_head(); ?>
 </head>
 
