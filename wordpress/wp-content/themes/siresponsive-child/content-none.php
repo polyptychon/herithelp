@@ -9,7 +9,7 @@
 ?>
 
 <div class="row">
-		<h1 class="twelve columns page_heading"><?php _e( 'Nothing Found', 'slresponsive' ); ?></h1>
+		<h1 class="twelve columns page_heading"><?php //_e( 'Nothing Found', 'slresponsive' ); ?><?php print "Δεν βρέθηκε κανένα αποτέλεσμα";?></h1>
 </div>
 <div class="row">
 		<div class="twelve columns">
@@ -21,7 +21,7 @@
 
 			<p><?php //_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'slresponsive' ); ?>
 				
-				<?php print "Δεν βρέθηκε κανένα αποτέλεσμα για τον όρο/φράση αναζήτησης. Δοκιμάστε ξανά με διαφορετικό όρο/φράση αναζήτησς,";?></p>
+				<?php print "Δεν βρέθηκε κανένα αποτέλεσμα για τον όρο/φράση της αναζήτησής σας. Δοκιμάστε ξανά με διαφορετικό όρο/φράση αναζήτησης.";?></p>
 			
 			<?php get_search_form(); ?>
 
