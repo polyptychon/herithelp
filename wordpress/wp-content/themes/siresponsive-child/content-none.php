@@ -19,10 +19,10 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php //_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'slresponsive' ); ?>
+			<p style="text-align: center"><?php //_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'slresponsive' ); ?>
 				
 				<?php print "Δεν βρέθηκε κανένα αποτέλεσμα για τον όρο/φράση της αναζήτησής σας.";?></p>
-			<p><?php print "Δοκιμάστε ξανά με διαφορετικό όρο/φράση αναζήτησης.";?></p>
+			<p  style="text-align: center"><?php print "Δοκιμάστε ξανά με διαφορετικό όρο/φράση αναζήτησης.";?></p>
 			
 			<?php get_search_form(); ?>
 
