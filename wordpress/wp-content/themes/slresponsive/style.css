@@ -5,7 +5,7 @@
 * Author: AwoThemes
 * Author URI: http://awothemes.pro
 * Description: Clean & Fast responsive multi-column theme for business and personal purpose. Built on a fully responsive grid, SlResponsive looks good on tablets and phone screens as it does on desktop. SlResponsive theme is fully compatible with BuddyPress, Contact Form 7, Jetpack, and others. SLRESPONSIVE Demo: http://demo.awothemes.pro/slresponsive
-* Version: 2.3.1
+* Version: 2.3.17
 * License: GNU General Public License
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Text Domain: slresponsive
@@ -1237,6 +1237,10 @@ img { -ms-interpolation-mode: bicubic; }
   [class*="column"]:after { display: table; clear: both; }
   [class^="push_"], [class*="push_"], [class^="pull_"], [class*="pull_"] { margin-left: 0 !important; } }
 /* Navigation (with dropdowns) */
+.site-title { padding-top: 0.273em; line-height: 1.15538em; padding-bottom: 0.273em; margin-bottom: 0; }
+
+.site-title a { color: #fff; font-size: 2.25rem; }
+
 .navbar { width: 100%; min-height: 60px; display: block; background: #222222; position: relative; }
 @media only screen and (max-width: 768px) { .navbar { border: none; }
   .navbar .column, .navbar .columns { min-height: 0; } }

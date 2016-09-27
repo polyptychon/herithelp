@@ -145,10 +145,16 @@ add_action( 'after_setup_theme', 'slresponsive_content_width', 0 );
 }
 add_action( 'wp_head', 'slresponsive_customizer_css' );*/
 
+
 /**
  * Include the TGM_Plugin_Activation class.
  */
 require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
+/**
+ * Admin Notices
+ */
+require_once get_template_directory() . '/inc/admin-notices.php';
 
 /**
  * Register the required plugins

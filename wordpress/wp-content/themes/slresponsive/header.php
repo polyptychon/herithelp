@@ -40,15 +40,9 @@
 					$custom_logo_id = get_theme_mod( 'custom_logo' );
 					$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );						
 					if (!$image[0]):?>
-						<?php
-						if ( is_front_page() && is_home() ) : ?>
-							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<?php else : ?>
-							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-						<?php
-						endif;?>
+						<p class="logo three columns"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 					<?php else :?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $image[0]; ?>"></a></p>
+						<p class="logo three columns"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $image[0]; ?>"></a></p>
 					<?php endif;?>	
 				
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => '', 'container' => '', 'items_wrap' => '<ul id="%1$s" class="ten columns">%3$s</ul>', 'walker'=> new slresponsive_Nav_Menu()) ); ?>
